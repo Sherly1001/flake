@@ -17,17 +17,17 @@
         set br (git branch --show-current 2>/dev/null)
         set st (git status -s 2>/dev/null | awk '/^\w/ { i = "i"; } /^.\w/ { w = "w"; } /^\?\?/ { u = "u"; } END { print u w i }')
 
-        if [ -n (string match -r u $st) ] || [ -n (string match -r w $st) ]
+        if [ (string match -r u $st) ] || [ (string match -r w $st) ]
           set cl red
           set bk red
-        else if [ -n (string match -r i $st) ]
-          set cl bryellow
+        else if [ (string match -r i $st) ]
+          set cl yellow
         else
           set cl green
           set bk green
         end
 
-        if [ -n (string match -r i $st) ]
+        if [ (string match -r i $st) ]
           set bk red
         end
 
@@ -72,6 +72,8 @@
         set -l status_color (set_color $fish_color_status)
         set -l statusb_color (set_color $bold_flag $fish_color_status)
         set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
+
+        set color_cwd brblue
 
         echo -n -s -e (prompt_login)' ' (set_color $color_cwd) (prompt_pwd -d 10) $normal ' ' (fish_vcs_prompt) $normal ' ' $prompt_status $suffix_color $suffix $normal ' '
       end
