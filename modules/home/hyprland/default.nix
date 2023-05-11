@@ -10,6 +10,7 @@
     ripgrep
     pavucontrol
     wl-clipboard
+    sox
     copyq
     flameshot
     wayland
@@ -151,6 +152,14 @@ bind = $mainMod ALT, v, exec, copyq show
 # screenshot
 bind = $mainMod, Print, exec, XDG_CURRENT_DESKTOP=sway flameshot gui
 
+# media and volume controls
+binde = , XF86AudioMute, exec, lightvol.sh -s -v 'sset Master toggle'
+binde = , XF86AudioRaiseVolume, exec, lightvol.sh -s -v 'sset Master 5%+'
+binde = , XF86AudioLowerVolume, exec, lightvol.sh -s -v 'sset Master 5%-'
+
+binde = , XF86MonBrightnessUp, exec, lightvol.sh -s -l '-A 5'
+binde = , XF86MonBrightnessDown, exec, lightvol.sh -s -l '-U 5'
+
 # switch focus
 bind = $mainMod, tab, workspace, previous
 bind = $mainMod CTRL, left, workspace, e-1
@@ -249,8 +258,6 @@ binde = $mainMod ALT, $down, moveactive, 0 $move-size
 # mouse binding
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
-
-# media and volume controls
 
 # windowrule
 windowrule = tile, neovide

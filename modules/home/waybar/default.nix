@@ -123,8 +123,8 @@ button {
         "format" = "{icon} {percent}%";
         "format-icons" = ["🌑" "🌒" "🌓" "🌔" "🌕"];
         "on-click" = "light -S 20";
-        "on-scroll-up" = "light -A 5";
-        "on-scroll-down" = "light -U 5";
+        "on-scroll-up" = "lightvol.sh -s -l '-A 5'";
+        "on-scroll-down" = "lightvol.sh -s -l '-U 5'";
       };
       "pulseaudio" = {
         "format" = "{icon} {volume}%";
@@ -133,9 +133,10 @@ button {
           "headphone" = ["" ""];
           "default" = ["" "" ""];
         };
-        "scroll-step" = 5;
         "on-click-right" = "pavucontrol";
-        "on-click" = "amixer sset Master toggle";
+        "on-click" = "lightvol.sh -s -v 'sset Master toggle'";
+        "on-scroll-up" = "lightvol.sh -s -v 'sset Master 5%+'";
+        "on-scroll-down" = "lightvol.sh -s -v 'sset Master 5%-'";
       };
       "clock" = {
         "interval" = 1;
