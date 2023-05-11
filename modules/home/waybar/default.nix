@@ -49,6 +49,7 @@ button {
 }
 
 #workspaces button:hover {
+  text-shadow: none;
   background: unset;
 }
 
