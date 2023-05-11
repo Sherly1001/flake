@@ -13,9 +13,10 @@
   outputs = { self, nixpkgs, ... }@inputs:
   let
     stateVersion = "22.11";
+    selfPkgs = import ./pkgs;
   in {
     nixosConfigurations = import ./modules/core {
-      inherit self nixpkgs inputs stateVersion;
+      inherit self nixpkgs inputs stateVersion selfPkgs;
     };
   };
 }

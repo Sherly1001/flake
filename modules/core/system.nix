@@ -3,8 +3,8 @@
   time.timeZone = "Asia/Ho_Chi_Minh";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.inputMethod.enabled = "ibus";
-  i18n.inputMethod.ibus.engines = with pkgs.ibus-engines; [ bamboo ];
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-bamboo ];
 
   system.stateVersion = stateVersion;
 
@@ -30,10 +30,10 @@
 
   environment.variables = rec {
     EDITOR = "nvim";
-    GTK_IM_MODULE = "ibus";
-    QT_IM_MODULE = "ibus";
-    XMODIFIERS = "@im=ibus";
-    SDL_IM_MODULE = "ibus";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+    SDL_IM_MODULE = "fcitx";
     GLFW_IM_MODULE = "ibus";
   };
 }

@@ -45,8 +45,8 @@
     extraConfig = ''
 $mainMod = SUPER
 $term = alacritty
-$browser = brave
-$browser-private = brave --incognito
+$browser = env -u WAYLAND_DISPLAY brave
+$browser-private = env -u WAYLAND_DISPLAY brave --incognito
 
 $left   = h
 $right  = l
@@ -290,8 +290,8 @@ windowrule = pin, $pic-in-pic
 # autostart
 exec-once = swww init
 exec-once = waybar
-exec-once = ibus start -drx
 exec-once = wall.sh
+exec-once = fcitx5 -dr
 exec-once = sleep 5 && copyq --start-server
 exec-once = sleep 5 && XDG_CURRENT_DESKTOP=sway flameshot
     '';

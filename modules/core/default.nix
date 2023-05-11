@@ -1,9 +1,10 @@
-{ inputs, nixpkgs, self, stateVersion, ... }:
+{ inputs, nixpkgs, self, stateVersion, selfPkgs, ... }:
 
 let
   system = "x86_64-linux";
   pkgs = import nixpkgs {
     inherit system;
+    overlays = [ selfPkgs.overlay ];
     config.allowUnfree = true;
     config.joypixels.acceptLicense = true;
   };
