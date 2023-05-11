@@ -10,6 +10,7 @@
     ripgrep
     pavucontrol
     wl-clipboard
+    xdg-utils
     sox
     copyq
     flameshot
