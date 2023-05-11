@@ -1,7 +1,6 @@
-{ inputs, nixpkgs, self, stateVersion, selfPkgs, ... }:
+{ inputs, nixpkgs, self, stateVersion, system, selfPkgs, ... }:
 
 let
-  system = "x86_64-linux";
   pkgs = import nixpkgs {
     inherit system;
     overlays = [ selfPkgs.overlay ];

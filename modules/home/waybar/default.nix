@@ -7,72 +7,72 @@
       target = "graphical-session.target";
     };
     style = ''
-@define-color red             #E06C75;
-@define-color dark_red        #BE5046;
-@define-color green           #98C379;
-@define-color yellow          #E5C07B;
-@define-color dark_yellow     #D19A66;
-@define-color blue            #61AFEF;
-@define-color purple          #C678DD;
-@define-color cyan            #56B6C2;
-@define-color white           #ABB2BF;
-@define-color grey            #5C6370;
-@define-color light           #c6cdda;
-@define-color black           #282C34;
-@define-color foreground      #ABB2BF;
-@define-color background      rgba(43, 48, 59, 0.85);
-@define-color trans           rgba(0, 0, 0, 0);
+      @define-color red             #E06C75;
+      @define-color dark_red        #BE5046;
+      @define-color green           #98C379;
+      @define-color yellow          #E5C07B;
+      @define-color dark_yellow     #D19A66;
+      @define-color blue            #61AFEF;
+      @define-color purple          #C678DD;
+      @define-color cyan            #56B6C2;
+      @define-color white           #ABB2BF;
+      @define-color grey            #5C6370;
+      @define-color light           #c6cdda;
+      @define-color black           #282C34;
+      @define-color foreground      #ABB2BF;
+      @define-color background      rgba(43, 48, 59, 0.85);
+      @define-color trans           rgba(0, 0, 0, 0);
 
-* {
-  font-family: Consolas, "Font Awesome 6 Free", "Font Awesome 6 Brands", "Iosevka Nerd Font";
-  font-size: 18px;
-}
+      * {
+        font-family: Consolas, "Font Awesome 6 Free", "Font Awesome 6 Brands", "Iosevka Nerd Font";
+        font-size: 18px;
+      }
 
-window#waybar {
-  background-color: @background;
-  color: @white;
-  border-radius: 8px;
-}
+      window#waybar {
+        background-color: @background;
+        color: @white;
+        border-radius: 8px;
+      }
 
-button {
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-}
+      button {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+      }
 
-#workspaces {
-  padding-left: 5px;
-}
+      #workspaces {
+        padding-left: 5px;
+      }
 
-#workspaces button {
-  color: @white;
-}
+      #workspaces button {
+        color: @white;
+      }
 
-#workspaces button:hover {
-  text-shadow: none;
-  background: unset;
-}
+      #workspaces button:hover {
+        text-shadow: none;
+        background: unset;
+      }
 
-#workspaces button.active {
-  color: @light;
-  border-bottom: 2px solid @light;
-}
+      #workspaces button.active {
+        color: @light;
+        border-bottom: 2px solid @light;
+      }
 
-#workspaces button.urgent {
-  background-color: #eb4d4b;
-}
+      #workspaces button.urgent {
+        background-color: #eb4d4b;
+      }
 
-#window {
-  padding: 0 50px;
-}
+      #window {
+        padding: 0 50px;
+      }
 
-#tray {
-  padding-right: 10px;
-}
+      #tray {
+        padding-right: 10px;
+      }
 
-#custom-sher-noob {
-  border-bottom: 2px solid #be5046;
-}
+      #custom-sher-noob {
+        border-bottom: 2px solid #be5046;
+      }
     '';
     settings = [{
       "layer" = "top";
@@ -122,7 +122,7 @@ button {
       };
       "backlight" = {
         "format" = "{icon} {percent}%";
-        "format-icons" = ["🌑" "🌒" "🌓" "🌔" "🌕"];
+        "format-icons" = [ "🌑" "🌒" "🌓" "🌔" "🌕" ];
         "on-click" = "light -S 20";
         "on-scroll-up" = "lightvol.sh -s -l '-A 5'";
         "on-scroll-down" = "lightvol.sh -s -l '-U 5'";
@@ -131,8 +131,8 @@ button {
         "format" = "{icon} {volume}%";
         "format-muted" = " {volume}%";
         "format-icons" = {
-          "headphone" = ["" ""];
-          "default" = ["" "" ""];
+          "headphone" = [ "" "" ];
+          "default" = [ "" "" "" ];
         };
         "on-click-right" = "pavucontrol";
         "on-click" = "lightvol.sh -s -v 'sset Master toggle'";
@@ -155,8 +155,8 @@ button {
     }];
   };
   programs.waybar.package = pkgs.waybar.overrideAttrs (oa: {
-    mesonFlags = (oa.mesonFlags or  []) ++ [ "-Dexperimental=true" ];
-    patches = (oa.patches or []) ++ [
+    mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
+    patches = (oa.patches or [ ]) ++ [
       (pkgs.fetchpatch {
         name = "fix waybar hyprctl";
         url = "https://aur.archlinux.org/cgit/aur.git/plain/hyprctl.patch?h=waybar-hyprland-git";

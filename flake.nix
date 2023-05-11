@@ -11,12 +11,15 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
-  let
-    stateVersion = "22.11";
-    selfPkgs = import ./pkgs;
-  in {
-    nixosConfigurations = import ./modules/core {
-      inherit self nixpkgs inputs stateVersion selfPkgs;
+    let
+      system = "x86_64-linux";
+      stateVersion = "22.11";
+      selfPkgs = import ./pkgs;
+    in
+    {
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
+      nixosConfigurations = import ./modules/core {
+        inherit self nixpkgs inputs stateVersion system selfPkgs;
+      };
     };
-  };
 }

@@ -1,5 +1,4 @@
 { ... }:
 {
-  home.sessionVariables = {
-  };
+  home.sessionVariables = { };
 }

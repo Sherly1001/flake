@@ -29,7 +29,7 @@ in
     };
   };
 
-  users.groups.video = {};
+  users.groups.video = { };
 
   users.users.${username} = {
     shell = pkgs.fish;
