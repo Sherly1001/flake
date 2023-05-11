@@ -149,6 +149,7 @@
       bind = $mainMod SHIFT, q, killactive,
       bind = $mainMod SHIFT, e, exit
       bind = $mainMod, z, pin,
+      bind = $mainMod, o, pseudo,
       bind = $mainMod, f, fullscreen,
       bind = $mainMod, v, togglesplit,
       bind = $mainMod, space, togglefloating,
