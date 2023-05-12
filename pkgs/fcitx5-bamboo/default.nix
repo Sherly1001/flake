@@ -32,7 +32,6 @@ stdenv.mkDerivation rec {
     description = "Bamboo (Vietnamese Input Method) engine support for Fcitx";
     homepage = "https://github.com/fcitx/fcitx5-bamboo";
     license = licenses.gpl2Plus;
-    maintainers = with maintainers; [ berberman ];
     platforms = platforms.linux;
   };
 }
