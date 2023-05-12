@@ -78,6 +78,11 @@
 
         echo -n -s -e (prompt_login)' ' (set_color $color_cwd) (prompt_pwd -d 10) $normal ' ' (fish_vcs_prompt) $normal ' ' $prompt_status $suffix_color $suffix $normal ' '
       end
+
+      function nx --description 'nix-shell with pre conf shell'
+        argparse --ignore-unknown 's/shell=' -- $argv
+        nix-shell $argv /cmn/sx/$_flag_shell.nix
+      end
     '';
     shellAliases = {
       vi = "nvim";
