@@ -7,6 +7,7 @@
       [ "$TTY1" = "/dev/tty1" ] && exec Hyprland >/tmp/hypr.logs 2>/tmp/hypr.errs
     '';
     shellInit = ''
+      set PATH ~/.yarn/bin $PATH
       set fish_greeting
 
       function fish_git_prompt
