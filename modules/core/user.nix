@@ -30,6 +30,7 @@ in
   };
 
   users.groups.video = { };
+  users.groups.users.gid = pkgs.lib.mkForce 1000;
 
   users.users.${username} = {
     shell = pkgs.fish;
