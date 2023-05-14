@@ -76,12 +76,41 @@
 
         set color_cwd brblue
 
-        echo -n -s -e (prompt_login)' ' (set_color $color_cwd) (prompt_pwd -d 10) $normal ' ' (fish_vcs_prompt) $normal ' ' $prompt_status $suffix_color $suffix $normal ' '
+        if test "$NX" != ""
+          set nx (set_color green)'#'$NX'#'$normal' '
+        end
+
+        echo -n -s -e (prompt_login)' ' (set_color $color_cwd) (prompt_pwd -d 10) $normal ' ' (fish_vcs_prompt) $normal ' ' $nx $prompt_status $suffix_color $suffix $normal ' '
+      end
+
+      if set -q NX_SHELL_HOOK
+        source (echo $NX_SHELL_HOOK | psub)
       end
 
       function nx --description 'nix-shell with pre conf shell'
-        argparse --ignore-unknown 's/shell=' -- $argv
-        nix-shell $argv /cmn/sx/$_flag_shell.nix
+        argparse -i 's/shell=' 'r/run=?' -- $argv
+
+        set shell /cmn/sx/$_flag_shell.nix
+        if test -d /cmn/sx/$_flag_shell
+          set shell /cmn/sx/$_flag_shell.nix
+        end
+
+        if set -q _flag_run && test -n "$_flag_run"
+          set NX $_flag_run
+          set run --run $_flag_run
+        else
+          set NX $argv
+          if test -z "$NX"
+            set NX $shell
+          end
+          if set -q _flag_run
+            set run --run $argv[-1]
+          else
+            set run --run "NX='$NX' fish"
+          end
+        end
+
+        nix-shell $shell $argv $run
       end
     '';
     shellAliases = {
