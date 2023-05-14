@@ -3,7 +3,7 @@
   boot = {
     tmp.cleanOnBoot = true;
     loader = {
-      timeout = 3;
+      timeout = 0;
       systemd-boot.enable = true;
       systemd-boot.configurationLimit = 10;
       efi.canTouchEfiVariables = true;
