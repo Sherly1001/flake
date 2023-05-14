@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./gtk
     ./hyprland
     ./fish
     ./alacritty

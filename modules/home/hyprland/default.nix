@@ -24,16 +24,6 @@
     yarn
   ];
 
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.gnome.adwaita-icon-theme;
-    size = 24;
-    x11 = {
-      enable = true;
-      defaultCursor = "Adwaita";
-    };
-  };
-
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
     enable = true;
