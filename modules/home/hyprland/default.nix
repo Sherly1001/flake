@@ -272,7 +272,7 @@
       windowrule = center, copyq
 
       windowrule = float, title:^(Firefox — Sharing Indicator)$
-      windowrule = center, title:^(Firefox — Sharing Indicator)$
+      windowrule = workspace special, title:^(Firefox — Sharing Indicator)$
 
       $pic-in-pic = title:^(Picture-in-Picture|Picture in picture)$
       windowrule = float, $pic-in-pic
