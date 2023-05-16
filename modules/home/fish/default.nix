@@ -112,6 +112,13 @@
 
         nix-shell $shell $argv $run
       end
+
+      function ni --description 'nix-env nixpkgs install'
+        for pkg in $argv
+          set -a pkgs nixpkgs.$pkg
+        end
+        nix-env -iA $pkgs
+      end
     '';
     shellAliases = {
       vi = "nvim";
