@@ -140,13 +140,15 @@
       bind = $mainMod SHIFT, q, killactive,
       bind = $mainMod SHIFT, e, exit
       bind = $mainMod, z, pin,
-      bind = $mainMod, o, pseudo,
+      bind = $mainMod, i, pseudo,
+      bind = $mainMod, o, exec, hprop.sh -s 'alphaoverride 1'
+      bind = $mainMod SHIFT, o, exec, hprop.sh -s 'alphaoverride 0'
       bind = $mainMod, f, fullscreen,
       bind = $mainMod, v, togglesplit,
       bind = $mainMod, space, togglefloating,
       bind = $mainMod, c, centerwindow,
       bind = $mainMod, m, movecursortocorner, 3
-      bind = $mainMod, n, movetoworkspace, special
+      bind = $mainMod, n, movetoworkspacesilent, special
       bind = $mainMod SHIFT, n, togglespecialworkspace,
       bind = $mainMod SHIFT, space, movetoworkspacesilent, e+0
       bind = $mainMod, p, exec, pkill rofi || rofi -show drun -modi drun
