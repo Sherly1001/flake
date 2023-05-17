@@ -266,6 +266,9 @@
 
       # windowrule
       windowrule = tile, neovide
+      windowrule = tile, title:^(WPS PDF)$
+      windowrule = tile, title:^(WPS Writer)$
+      windowrule = tile, title:^(WPS Spreadsheets)$
 
       windowrule = float, pavucontrol
       windowrule = center, pavucontrol
