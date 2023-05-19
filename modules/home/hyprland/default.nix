@@ -72,8 +72,11 @@
       monitor = , preferred, auto, 1
 
       input {
-        kb_layout = us
         follow_mouse = yes
+
+        touchpad {
+          natural_scroll = yes
+        }
       }
 
       misc {
