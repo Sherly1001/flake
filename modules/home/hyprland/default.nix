@@ -71,6 +71,17 @@
       workspace = $ws1, default:true
       monitor = , preferred, auto, 1
 
+      workspace = $ws1, monitor:eDP-1
+      workspace = $ws2, monitor:eDP-1
+      workspace = $ws3, monitor:eDP-1
+      workspace = $ws4, monitor:eDP-1
+      workspace = $ws5, monitor:eDP-1
+      workspace = $ws6, monitor:HDMI-A-1
+      workspace = $ws7, monitor:HDMI-A-1
+      workspace = $ws8, monitor:HDMI-A-1
+      workspace = $ws9, monitor:HDMI-A-1
+      workspace = $ws10, monitor:HDMI-A-1
+
       input {
         follow_mouse = yes
 
