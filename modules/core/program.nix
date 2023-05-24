@@ -4,5 +4,13 @@
     fish.enable = true;
     neovim.enable = true;
     light.enable = true;
+    git = {
+      enable = true;
+      config = {
+        init = {
+          defaultBranch = "main";
+        };
+      };
+    };
   };
 }
