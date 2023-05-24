@@ -13,7 +13,8 @@
     xdg-utils
     sox
     copyq
-    flameshot
+    grim
+    slurp
     wayland
     rofi
     alacritty
@@ -169,7 +170,7 @@
       bind = $mainMod ALT, v, exec, copyq show
 
       # screenshot
-      bind = $mainMod, Print, exec, XDG_CURRENT_DESKTOP=sway flameshot gui
+      bind = $mainMod, Print, exec, screenshot.sh
 
       # media and volume controls
       binde = , XF86AudioMute, exec, lightvol.sh -s -v 'sset Master toggle'
@@ -304,7 +305,6 @@
       exec-once = wall.sh
       exec-once = fcitx5 -dr
       exec-once = sleep 5 && copyq --start-server
-      exec-once = sleep 5 && XDG_CURRENT_DESKTOP=sway flameshot
     '';
   };
 }
