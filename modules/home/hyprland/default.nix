@@ -10,6 +10,7 @@
     ripgrep
     pavucontrol
     wl-clipboard
+    xclip
     xdg-utils
     sox
     copyq
