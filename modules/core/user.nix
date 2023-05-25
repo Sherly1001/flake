@@ -29,13 +29,14 @@ in
   };
 
   users.groups.video = { };
+  users.groups.docker = { };
   users.groups.users.gid = pkgs.lib.mkForce 1000;
 
   users.users.${username} = {
     shell = pkgs.fish;
     description = name;
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "docker" ];
     hashedPassword = "$6$bsY5cnUgJ8ry7k4G$2MQmWWeHzIE14.1UH/4PHeERgKv9BThVejr8AdR/Iv5XQaGX5lKAmvSyNpJmt5IltRmI6SUrKbVtkLsRNRlA50";
   };
 }
