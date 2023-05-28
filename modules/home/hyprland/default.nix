@@ -147,6 +147,10 @@
         animation = workspaces, 1, 3, smoothIn, slide
       }
 
+      binds {
+        allow_workspace_cycles = true
+      }
+
       # ----------------------------------------------------------------
       # keybindings
       bind = $mainMod, return, workspace, $ws2
