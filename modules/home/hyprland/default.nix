@@ -21,6 +21,7 @@
     alacritty
     neovide
     brave
+    firefox
     go
     nodejs
     yarn
@@ -38,8 +39,8 @@
     extraConfig = ''
       $mainMod = SUPER
       $term = alacritty
-      $browser = env -u WAYLAND_DISPLAY brave
-      $browser-private = env -u WAYLAND_DISPLAY brave --incognito
+      $browser = firefox
+      $browser-private = firefox --private-window
 
       $left   = h
       $right  = l
