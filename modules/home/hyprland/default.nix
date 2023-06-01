@@ -9,6 +9,7 @@
     swww
     ripgrep
     pavucontrol
+    swaylock-effects
     wl-clipboard
     xclip
     xdg-utils
@@ -97,7 +98,6 @@
         focus_on_activate = true
         disable_hyprland_logo = true
         disable_splash_rendering = true
-        disable_autoreload = false # autoreload is unnecessary on nixos
       }
 
       general {
@@ -158,6 +158,7 @@
       bind = $mainMod, return, exec, $term
       bind = $mainMod SHIFT, return, exec, $term
       bind = $mainMod, b, exec, $browser
+      bind = $mainMod, q, exec, lock.sh
       bind = $mainMod SHIFT, b, exec, $browser-private
       bind = $mainMod SHIFT, q, killactive,
       bind = $mainMod SHIFT, e, exit
