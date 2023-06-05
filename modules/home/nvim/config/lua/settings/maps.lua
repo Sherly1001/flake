@@ -73,6 +73,10 @@ keymap('n', ';m', ':e ~/flake/modules/home/nvim/config/lua/settings/maps.lua<cr>
 keymap('n', ';l', ':e ~/flake/modules/home/nvim/config/lua/lsp/lsp.lua<cr>', opts_sl)
 keymap('n', ';id', ':e ~/flake/modules/home/nvim/config/lua/settings/indent.lua<cr>', opts_sl)
 
+keymap('n', ';fs', ':set foldmethod=syntax<cr>', opts_sl)
+keymap('n', ';fm', ':set foldmethod=manual<cr>', opts_sl)
+keymap('n', '<cr>', [[ foldlevel('.') > 0 ? 'za' : 'j' ]], { expr = true })
+
 keymap('n', ';cl', ':ColorToggle<cr>', opts_sl)
 keymap('n', ';tv', ':bel vs term://bash<cr>', opts_sl)
 keymap('n', ';tt', ':bel sp term://bash <bar> resize 14<cr>', opts_sl)
