@@ -78,8 +78,8 @@ keymap('n', ';fm', ':set foldmethod=manual<cr>', opts_sl)
 keymap('n', '<cr>', [[ foldlevel('.') > 0 ? 'za' : 'j' ]], { expr = true })
 
 keymap('n', ';cl', ':ColorToggle<cr>', opts_sl)
-keymap('n', ';tv', ':bel vs term://bash<cr>', opts_sl)
-keymap('n', ';tt', ':bel sp term://bash <bar> resize 14<cr>', opts_sl)
+keymap('n', ';tv', ':bel vs term://fish<cr>', opts_sl)
+keymap('n', ';tt', ':bel sp term://fish <bar> resize 14<cr>', opts_sl)
 keymap('n', ';vi', [[ &keymap == '' ? ':set keymap=vietnamese-vni<cr>' : ':set keymap=<cr>' ]], { expr = true })
 
 keymap('n', '<f2>', ':lua vim.lsp.buf.rename()<cr>', opts)
