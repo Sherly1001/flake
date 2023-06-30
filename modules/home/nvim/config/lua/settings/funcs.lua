@@ -23,6 +23,24 @@ local function evaltab(tab)
   return tab
 end
 
+function Funcs.bufsNum(nr)
+  if nr < 2 then
+    return ''
+  end
+
+  local smallNumbers = {'⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'}
+  local strNr = tostring(nr)
+
+  local str = ''
+  for i = 1, #strNr do
+    local c = strNr:sub(i, i)
+    local idx = c - '0' + 1
+    str = str .. smallNumbers[idx]
+  end
+
+  return str
+end
+
 function Funcs.tabline()
   local numtab = vim.fn.tabpagenr('$')
   local curtab = vim.fn.tabpagenr()
@@ -35,9 +53,16 @@ function Funcs.tabline()
     local bufs = vim.fn.tabpagebuflist(tab)
     local bufnr = bufs[wins]
 
+    local bufsNum = ''
+    local ok, res = pcall(vim.fn['ctrlspace#api#Buffers'], tab)
+    if ok then
+      bufsNum = vim.fn.len(res)
+      bufsNum = Funcs.bufsNum(bufsNum)
+    end
+
     local tabname = tab == curtab and '%#TabLineSel#' or '%#TabLine#'
     tabname = tabname .. '%' .. tab .. 'T '
-    tabname = tabname .. title(bufnr)
+    tabname = tabname .. title(bufnr) .. bufsNum
     tabname = tabname .. (modified(bufnr) and ' •' or '')
     tabname = tabname .. ' %T'
 

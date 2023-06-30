@@ -12,10 +12,13 @@ opt.wildignorecase  = true
 
 opt.cursorline = true
 
-opt.hidden    = false
-opt.backup    = false
-opt.undofile  = false
-opt.swapfile  = false
+opt.hidden     = true
+opt.compatible = false
+opt.backup     = false
+opt.undofile   = false
+opt.swapfile   = false
+
+opt.encoding = 'utf-8'
 
 opt.mouse     = 'a'
 opt.belloff   = 'all'
@@ -77,6 +80,13 @@ g.ctrlp_prompt_mappings = {
   ['AcceptSelection("e")'] = {},
   ['AcceptSelection("t")'] = {'<cr>', '<2-LeftMouse>'},
 }
+
+g.CtrlSpaceUseTabline = 0
+g.CtrlSpaceGlobCommand = 'rg --color=never --hidden --files'
+g.CtrlSpaceDefaultMappingKey = '<C-Space> '
+g.CtrlSpaceLoadLastWorkspaceOnStart = 1
+g.CtrlSpaceSaveWorkspaceOnSwitch = 1
+g.CtrlSpaceSaveWorkspaceOnExit = 1
 
 g.vimtex_view_method = 'zathura'
 g.vimtex_compiler_method = 'latexmk'

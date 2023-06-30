@@ -5,6 +5,7 @@ vim.call('plug#begin', '~/.local/share/nvim/plugged')
 -- utils plugins
 Plug('iamcco/markdown-preview.nvim', { ['do'] = 'cd app && yarn install' })
 Plug 'lervag/vimtex'
+Plug 'Asheq/close-buffers.vim'
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'
@@ -37,6 +38,7 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'ctrlpvim/ctrlp.vim'
 
 -- git plugins
