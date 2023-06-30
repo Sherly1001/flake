@@ -20,6 +20,7 @@
     '';
     shellAliases = {
       vi = "nvim";
+      nu = "nix-env --uninstall";
       nv = "env -u WAYLAND_DISPLAY neovide --multigrid";
       xw = "env -u WAYLAND_DISPLAY";
 

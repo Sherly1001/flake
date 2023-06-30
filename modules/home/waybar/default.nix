@@ -2,10 +2,6 @@
 {
   programs.waybar = {
     enable = true;
-    systemd = {
-      enable = false;
-      target = "graphical-session.target";
-    };
     style = ''
       @define-color red             #E06C75;
       @define-color dark_red        #BE5046;
