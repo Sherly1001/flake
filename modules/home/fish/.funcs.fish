@@ -102,14 +102,14 @@ function nx --description 'nix-shell with pre conf shell'
     end
   end
 
-  nix-shell $shell $argv $run
+  NIXPKGS_ALLOW_UNFREE=1 nix-shell $shell $argv $run
 end
 
 function ni --description 'nix-env nixpkgs install'
   for pkg in $argv
     set -a pkgs nixpkgs.$pkg
   end
-  nix-env -iA $pkgs
+  NIXPKGS_ALLOW_UNFREE=1 nix-env -iA $pkgs
 end
 
 function gi --description 'create .gitignore'
