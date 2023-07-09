@@ -37,7 +37,7 @@ keymap('n', '<a-k>', '<c-t>', opts_sl)
 
 keymap('n', '<c-t>', ':tabe<cr>', opts_sl)
 keymap('n', '<s-t>', ':tab sp<cr>', opts_sl)
-keymap('n', '<c-n>', ':tabe .<cr>', opts_sl)
+keymap('n', '<a-t>', ':tabe .<cr>', opts_sl)
 keymap('n', '<a-h>', ':tabp<cr>', opts_sl)
 keymap('n', '<a-l>', ':tabn<cr>', opts_sl)
 

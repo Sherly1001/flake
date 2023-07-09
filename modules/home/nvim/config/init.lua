@@ -6,6 +6,7 @@ vim.call('plug#begin', '~/.local/share/nvim/plugged')
 Plug('iamcco/markdown-preview.nvim', { ['do'] = 'cd app && yarn install' })
 Plug 'lervag/vimtex'
 Plug 'Asheq/close-buffers.vim'
+Plug 'mg979/vim-visual-multi'
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'
