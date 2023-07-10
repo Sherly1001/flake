@@ -72,19 +72,25 @@
 
       $move-size = 80
 
+      $mon-left = eDP-1
+      $mon-right = HDMI-A-1
+
       workspace = $ws1, default:true
       monitor = , preferred, auto, 1
 
-      workspace = $ws1, monitor:eDP-1
-      workspace = $ws2, monitor:eDP-1
-      workspace = $ws3, monitor:eDP-1
-      workspace = $ws4, monitor:eDP-1
-      workspace = $ws5, monitor:eDP-1
-      workspace = $ws6, monitor:HDMI-A-1
-      workspace = $ws7, monitor:HDMI-A-1
-      workspace = $ws8, monitor:HDMI-A-1
-      workspace = $ws9, monitor:HDMI-A-1
-      workspace = $ws10, monitor:HDMI-A-1
+      monitor = $mon-left, preferred, 0x0, 1
+      monitor = $mon-right, preferred, 1920x0, 1
+
+      workspace = $ws1, monitor:$mon-left
+      workspace = $ws2, monitor:$mon-left
+      workspace = $ws3, monitor:$mon-left
+      workspace = $ws4, monitor:$mon-left
+      workspace = $ws5, monitor:$mon-left
+      workspace = $ws6, monitor:$mon-right
+      workspace = $ws7, monitor:$mon-right
+      workspace = $ws8, monitor:$mon-right
+      workspace = $ws9, monitor:$mon-right
+      workspace = $ws10, monitor:$mon-right
 
       input {
         follow_mouse = yes
