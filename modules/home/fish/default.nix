@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   home.file.".funcs.fish".source = ./.funcs.fish;
   programs.fish = {
@@ -8,7 +8,8 @@
       [ "$TTY1" = "/dev/tty1" ] && exec Hyprland >/tmp/hypr.logs 2>/tmp/hypr.errs
     '';
     shellInit = ''
-      set PATH ~/.yarn/bin $PATH
+      set -x PATH ~/.yarn/bin $PATH
+      set -x NIX_LD (cat "${pkgs.stdenv.cc}/nix-support/dynamic-linker")
 
       if [ -f ~/.funcs.fish ]
         source ~/.funcs.fish
