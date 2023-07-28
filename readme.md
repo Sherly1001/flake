@@ -2,6 +2,7 @@
 
 # **Nixos - Hyprland**
 </div>
+Archived and moved to <a href="https://github.com/Sherly1001/dotfiles/tree/nix">dotfiles</a>.
 
 # Screenshots
 <img title="Desktop" alt="Desktop" src="./assets/desk.png">
